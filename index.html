@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Realidad aumentada</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link type="text/css" href="css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+    <!-- <model-viewer> HTML element -->
+      <model-viewer
+        src="assets/3d_models/Astronaut.webp"
+        poster="assets/3d_models/Astronaut.webp"
+        ar
+        shadow-intensity="1" 
+        ar-placement="wall"
+        ar-scale="auto"
+        camera-controls
+        touch-action="pan-y"
+        auto-rotate
+        alt="A 3D modelhelmet raider"
+        max-camera-orbit="auto 90deg auto"
+      >
+        <button 
+          slot="ar-button" 
+          id="ar-button"
+          style="background-image: url('assets/img/ar_icon.png')";
+        >Ver en tu espacio</button>
+
+        <button id="ar-failure">AR is not tracking!</button>
+
+        <div class="slider">
+          <div class="slides">
+            
+            <button
+              class="slide selected"
+              onclick="switchSrc(this, 'helmet')"
+              style="background-image: url('assets/3d_models/helmet.webp');"
+            ></button
+            ><button
+              class="slide"
+              onclick="switchSrc(this, 'Astronaut')"
+              style="background-image: url('assets/3d_models/Astronaut.webp');"
+            ></button>
+            <button
+              class="slide"
+              onclick="switchSrc(this, 'tras')"
+              style="background-image: url('assets/3d_models/tras.webp');"
+            ></button>
+            <button
+              class="slide"
+              onclick="switchSrc(this, 'ejem')"
+              style="background-image: url('assets/3d_models/ejem.webp');"
+            ></button>
+            <button
+              class="slide"
+              onclick="switchSrc(this, 'ejem2')"
+              style="background-image: url('assets/3d_models/ejem2.webp');"
+            ></button>
+          </div>
+        </div>
+        
+      </model-viewer>
+    </div>
+    
+    <script src="js/main.js"></script>
+
+    <script type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"
+    ></script>
+  </body>
+</html>
